@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Fraud Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-header" role="banner">
+        <div class="header-content">
+            <h2><i class="fas fa-tachometer-alt"></i> User Dashboard</h2>
+            <div class="header-actions" role="navigation">
+                <a href="visualization.html" class="visualization-link" aria-label="View Visualization">
+                    <i class="fas fa-chart-pie"></i> View Visualization
+                </a>
+                <button class="logout-btn" aria-label="Logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-content" role="main">
+        <div class="stats-container">
+            <div class="stat-card">
+                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                <h3>Fraud Cases</h3>
+                <p id="total-fraud" aria-live="polite">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                <h3>Legitimate Cases</h3>
+                <p id="total-legitimate" aria-live="polite">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+                <h3>Pending Reviews</h3>
+                <p id="pending-reviews" aria-live="polite">0</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-dollar-sign" aria-hidden="true"></i>
+                <h3>Total Fraud Amount</h3>
+                <p id="total-fraud-amount" aria-live="polite">$0.00</p>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table aria-describedby="transaction-table-desc">
+                <caption id="transaction-table-desc" class="sr-only">User Transaction List</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Transaction ID</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="transaction-table"></tbody>
+            </table>
+            <button class="refresh-btn" aria-label="Refresh Transaction Data">
+                <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

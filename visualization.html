@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Analysis - Fraud Detection System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-header">
+        <div class="header-content">
+            <h2><i class="fas fa-chart-pie"></i> Fraud Analysis Dashboard</h2>
+            <div class="header-actions">
+                <button class="refresh-btn" onclick="refreshCharts()">
+                    <i class="fas fa-sync-alt"></i> Refresh
+                </button>
+                <button class="back-btn" onclick="window.location.href='dashboard.html'">
+                    <i class="fas fa-arrow-left"></i> Back to Dashboard
+                </button>
+                <button class="logout-btn" onclick="window.location.href='index.html'">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="visualization-content">
+        <div class="charts-grid">
+            <div class="chart-container">
+                <h3><i class="fas fa-chart-pie"></i> Transaction Distribution</h3>
+                <canvas id="fraudPieChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3><i class="fas fa-chart-bar"></i> Fraud by Location</h3>
+                <canvas id="locationBarChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="visualization.js"></script>
+</body>
+</html>
